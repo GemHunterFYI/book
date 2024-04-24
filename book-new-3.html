@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Book</title>
+</head>
+<style type="text/css">
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+}
+
+/*Webflow standard classes */
+html.w-mod-touch * {
+  background-attachment: scroll !important;
+}
+.w-block {
+  display: block;
+}
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+}
+
+
+.w-webflow-badge,
+.w-webflow-badge * {
+  position: static;
+  left: auto;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  z-index: auto;
+  display: block;
+  visibility: visible;
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+  max-height: none;
+  max-width: none;
+  min-height: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  float: none;
+  clear: none;
+  border: 0 none transparent;
+  border-radius: 0;
+  background: none;
+  background-image: none;
+  background-position: 0% 0%;
+  background-size: auto auto;
+  background-repeat: repeat;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-attachment: scroll;
+  background-color: transparent;
+  box-shadow: none;
+  opacity: 1.0;
+  transform: none;
+  transition: none;
+  direction: ltr;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  text-align: inherit;
+  letter-spacing: inherit;
+  text-decoration: inherit;
+  text-indent: 0;
+  text-transform: inherit;
+  list-style-type: disc;
+  text-shadow: none;
+  font-smoothing: auto;
+  vertical-align: baseline;
+  cursor: inherit;
+  white-space: inherit;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+}
+.w-webflow-badge {
+  position: fixed !important;
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 2147483647 !important;
+  top: auto !important;
+  right: 12px !important;
+  bottom: 12px !important;
+  left: auto !important;
+  color: #AAADB0 !important;
+  background-color: #fff !important;
+  border-radius: 3px !important;
+  padding: 6px 8px 6px 6px !important;
+  font-size: 12px !important;
+  opacity: 1.0 !important;
+  line-height: 14px !important;
+  text-decoration: none !important;
+  transform: none !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  overflow: visible !important;
+  white-space: nowrap;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+.w-webflow-badge > img {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  vertical-align: middle !important;
+}
+
+.w-richtext:before,
+.w-richtext:after {
+  content: " ";
+  display: table;
+}
+.w-richtext:after {
+  clear: both;
+}
+.w-richtext[contenteditable="true"]:before,
+.w-richtext[contenteditable="true"]:after {
+  white-space: initial;
+}
+
+/*-----------------------*/
+
+h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.scene {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 54vw;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  background-color: #fff;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-perspective-origin: 50% 0%;
+  perspective-origin: 50% 0%;
+}
+
+.book-wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 57vw;
+  margin-top: 8vw;
+  margin-bottom: 8vw;
+  padding-right: 1%;
+  padding-left: 1%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg) rotateZ(-10deg);
+  transform: translate3d(0px, 5%, -264px) rotateX(27deg) rotateY(0deg) rotateZ(-10deg);
+  -webkit-transition: -webkit-transform 2000ms cubic-bezier(.165, .84, .44, 1);
+  transition: -webkit-transform 2000ms cubic-bezier(.165, .84, .44, 1);
+  transition: transform 2000ms cubic-bezier(.165, .84, .44, 1);
+  transition: transform 2000ms cubic-bezier(.165, .84, .44, 1), -webkit-transform 2000ms cubic-bezier(.165, .84, .44, 1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.book-wrap:hover {
+  -webkit-transform: translate3d(0px, 5%, -264px) rotateX(13deg) rotateY(0deg) rotateZ(-3deg);
+  transform: translate3d(0px, 5%, -264px) rotateX(13deg) rotateY(0deg) rotateZ(-3deg);
+}
+
+.book-cover-left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-top-left-radius: 4%;
+  border-bottom-left-radius: 4%;
+  background-color: #2e1800;
+  box-shadow: inset 4px -4px 4px 1px #635648, inset 7px -7px 4px 0 #221b14;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-transform: translate3d(0px, 0px, -1px);
+  transform: translate3d(0px, 0px, -1px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.book-cover-right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-top-right-radius: 4%;
+  border-bottom-right-radius: 4%;
+  background-color: #2e1800;
+  box-shadow: inset -4px -4px 4px 1px #635648, inset -7px -7px 4px 0 #221b14;
+}
+
+.layer1 {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px 10px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-transform: translate3d(0px, 0px, 5px);
+  transform: translate3d(0px, 0px, 5px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.page-left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-top-left-radius: 1%;
+  border-bottom-left-radius: 1%;
+  background-color: #fff;
+  box-shadow: inset 0 0 26px 2px #d8cccc, -1px 1px 13px 0 rgba(34, 27, 20, .81);
+}
+
+.layer-text,.pages-new {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 97%;
+  margin: 20px 10px 18px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
+  -webkit-transform: translate3d(0px, 0px, 32px);
+  transform: translate3d(0px, 0px, 32px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer-text.right {
+  -webkit-transform: translate3d(-37px, 0px, 32px);
+  transform: translate3d(-37px, 0px, 32px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.page-left-2 {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+/*  border-top-left-radius: 18%;*/
+  border-bottom-left-radius: 1%;
+  background-color: #fff;
+  box-shadow: inset 0 0 7px 4px hsla(0, 13%, 82%, .43), -1px 1px 13px 0 rgba(34, 27, 20, .49);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateX(0deg) rotateY(11deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(11deg) rotateZ(0deg);
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transition: -webkit-transform 650ms cubic-bezier(.165, .84, .44, 1);
+  transition: -webkit-transform 650ms cubic-bezier(.165, .84, .44, 1);
+  transition: transform 650ms cubic-bezier(.165, .84, .44, 1);
+  transition: transform 650ms cubic-bezier(.165, .84, .44, 1), -webkit-transform 650ms cubic-bezier(.165, .84, .44, 1);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+/*.page-left-2:hover {
+  -webkit-transform: rotateX(0deg) rotateY(7deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(7deg) rotateZ(0deg);
+}*/
+
+.left-side,.left-side-cover {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 49%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-perspective-origin: 0% 50%;
+  perspective-origin: 0% 50%;
+  -webkit-transform: rotateX(0deg) rotateY(20deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(20deg) rotateZ(0deg);
+  -webkit-transform-origin: 100% 50%;
+  -ms-transform-origin: 100% 50%;
+  transform-origin: 100% 50%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.right-side,.right-side-cover {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 49%;
+  -webkit-perspective: 4000px;
+  perspective: 4000px;
+  -webkit-perspective-origin: 0% 50%;
+  perspective-origin: 0% 50%;
+  -webkit-transform: rotateX(0deg) rotateY(-1deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(-1deg) rotateZ(0deg);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.center {
+  width: 3%;
+  background-image: -webkit-radial-gradient(circle farthest-corner at 56% -8%, #fff 8%, transparent 0), -webkit-radial-gradient(circle farthest-corner at 50% 108%, #fff 8%, transparent 0), -webkit-linear-gradient(0deg, #635648, #2e1800 21%, #635648 30%, #2e1800 48%, #635648 68%, #2e1800 79%, #635648);
+  background-image: radial-gradient(circle farthest-corner at 56% -8%, #fff 8%, transparent 0), radial-gradient(circle farthest-corner at 50% 108%, #fff 8%, transparent 0), linear-gradient(90deg, #635648, #2e1800 21%, #635648 30%, #2e1800 48%, #635648 68%, #2e1800 79%, #635648);
+}
+
+.corner-fold {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 30px;
+  height: 30px;
+  border-right: 1px solid hsla(0, 13%, 82%, .55);
+  border-bottom: 1px solid hsla(0, 13%, 82%, .55);
+  background-image: -webkit-linear-gradient(315deg, transparent 47%, #f0f0f0 48%, #fff 55%, #f6f6f6);
+  background-image: linear-gradient(135deg, transparent 47%, #f0f0f0 48%, #fff 55%, #f6f6f6);
+  box-shadow: 6px 6px 9px -4px hsla(0, 13%, 82%, .53);
+}
+
+.corner {
+  position: absolute;
+  left: 0px;
+  top: 27px;
+  width: 5vw;
+  height: 5vw;
+  background-image: -webkit-linear-gradient(315deg, #fff 30%, transparent);
+  background-image: linear-gradient(135deg, #fff 30%, transparent);
+  box-shadow: inset 13px 0 17px -12px hsla(0, 13%, 82%, .43);
+}
+
+.corner2 {
+  position: absolute;
+  left: 28px;
+  top: 0px;
+  width: 5vw;
+  height: 5vw;
+  background-image: -webkit-linear-gradient(315deg, #fff 31%, transparent);
+  background-image: linear-gradient(135deg, #fff 31%, transparent);
+  box-shadow: inset 0 13px 17px -12px hsla(0, 13%, 82%, .43);
+}
+
+.page-text {
+  position: relative;
+  display: block;
+  width: 80%;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.page-text p {
+  margin-bottom: 0px;
+  font-size: 0.85vw;
+  line-height: 1.5;
+}
+
+.page-text h3 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-style: italic;
+}
+
+.page-text h6 {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.page-text a {
+  color: #da5a13;
+}
+
+.layer2 {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px 13px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-transform: translate3d(2px, 0px, 10px);
+  transform: translate3d(2px, 0px, 10px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer2.right {
+  -webkit-transform: translate3d(-5px, 0px, 10px);
+  transform: translate3d(-5px, 0px, 10px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer3 {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px 13px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-transform: translate3d(4px, 0px, 20px);
+  transform: translate3d(4px, 0px, 20px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer3.right {
+  -webkit-transform: translate3d(-10px, 0px, 20px);
+  transform: translate3d(-10px, 0px, 20px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer4 {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 10px 15px;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-transform: translate3d(6px, 0px, 30px);
+  transform: translate3d(6px, 0px, 30px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.layer4.right {
+  -webkit-transform: translate3d(-15px, 0px, 30px);
+  transform: translate3d(-15px, 0px, 30px);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.page-right-2 {
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-top-right-radius: 1%;
+  border-bottom-right-radius: 1%;
+  background-color: #fff;
+  box-shadow: inset 0 0 7px 4px hsla(0, 13%, 82%, .43), 1px 1px 13px 0 rgba(34, 27, 20, .49);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: rotateX(0deg) rotateY(-3deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(-3deg) rotateZ(0deg);
+  -webkit-transform-origin: 0% 50%;
+  -ms-transform-origin: 0% 50%;
+  transform-origin: 0% 50%;
+  -webkit-transition: -webkit-transform 850ms ease;
+  transition: -webkit-transform 850ms ease;
+  transition: transform 850ms ease;
+  transition: transform 850ms ease, -webkit-transform 850ms ease;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.page-right-2:hover {
+  -webkit-transform: rotateX(0deg) rotateY(-17deg) rotateZ(0deg);
+  transform: rotateX(0deg) rotateY(-17deg) rotateZ(0deg);
+}
+
+.page-right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  border-top-right-radius: 1%;
+  border-bottom-right-radius: 1%;
+  background-color: #fff;
+  box-shadow: inset 0 0 26px 2px #d8cccc, 1px 1px 13px 0 rgba(34, 27, 20, .81);
+}
+.pages-new {
+	position: relative;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    /* display: -webkit-box; */
+    /* display: -webkit-flex; */
+    display: -ms-flexbox;
+    /* display: flex; */
+    width: 97%;
+    margin: 20px 10px 18px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 4000px;
+    perspective: 4000px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
+    -webkit-transform: translate3d(0px, 0px, 32px);
+    transform: translate3d(0px, 0px, 32px);
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+.book-cover-left {
+	position: absolute;
+    width: 100%;
+    left: 0;
+    height: 100%;
+}
+.pages {
+	position: absolute;
+    width: 55%;
+    height: 71%;
+    top: 13%;
+  /*  background: white;*/
+    transform: rotate3d(0, 74, -146, 9deg);
+}
+.page-left-side {
+	position: absolute;
+    width: 49%;
+    background-color: white;
+}
+.each-page-new {
+	position: absolute;
+    backface-visibility: hidden;
+    width: 93%;
+    height: 100%;
+    cursor: grab;
+}
+.page-back-side {
+	position: absolute;
+	height: 100%;
+    width: 100%;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: white;
+    box-shadow: inset 0 0 7px 4px hsl(0deg 13% 82% / 43%), -1px 1px 13px 0 rgb(34 27 20 / 49%);
+}
+.next-page {
+	transform: rotateX(0) rotateY(160deg) rotateZ(0);
+  backface-visibility: visible;
+	transition: 0.5s all;
+}
+@media (min-width: 2000px){
+  .next-page {
+    transform: rotateX(0) rotateY(158deg) rotateZ(0);
+  }
+  .scene,.left-side,.pages-new {
+   perspective: 8000px;
+  }
+}
+@media (max-width: 991px) {
+  .scene {
+    height: 56vw;
+  }
+  .book-wrap {
+    width: 62vw;
+  }
+  .page-left-2 {
+   /* border-top-left-radius: 20%;*/
+  }
+  .corner-fold {
+    left: 0%;
+    top: -1%;
+    width: 3.5vw;
+    height: 3.5vw;
+    max-height: 35px;
+    background-image: -webkit-linear-gradient(315deg, transparent 50%, #f0f0f0 51%, #fff 52%, #f6f6f6);
+    background-image: linear-gradient(135deg, transparent 50%, #f0f0f0 51%, #fff 52%, #f6f6f6);
+  }
+  .corner {
+    top: 8%;
+  }
+  .page-text h3 {
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+    font-size: 3vw;
+  }
+  .page-text h6 {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    font-size: 1vw;
+  }
+  .page-right-2 {
+    padding-left: 9%;
+  }
+}
+
+@media (max-width: 767px) {
+  .scene {
+    height: 65vw;
+  }
+  .book-wrap {
+    width: 80vw;
+  }
+  .page-text h6 {
+
+    font-size: 1.5vw;
+}
+.page-text p {
+    margin-bottom: 0px;
+    font-size: 1.2vw;
+    line-height: 1.2;
+}
+
+}
+@media (max-width: 576px){
+  .page-text {
+ 
+    margin-top: 10px;
+}
+.page-text h3 {
+    margin-top: 2vw;
+    font-size: 4vw;
+}
+.page-text h6 {
+    font-size: 2vw;
+}
+.page-text p {
+    margin-bottom: 0px;
+    font-size: 1.5vw;
+    line-height: 1.2;
+}
+}
+@media (max-width: 479px) {
+  .scene {
+    height: 69vw;
+  }
+  .corner-fold {
+    width: 5.5vw;
+    height: 5.5vw;
+    min-width: 21px;
+  }
+}
+.left-on-top {
+	z-index: 99;
+}
+</style>
+<body>
+  <div class="scene">
+    <div class="book-wrap">
+      <div class="left-side">
+        <div class="book-cover-left"></div>
+        <div class="layer1">
+          <div class="page-left"></div>
+        </div>
+        <div class="layer2">
+          <div class="page-left"></div>
+        </div>
+        <div class="layer3">
+          <div class="page-left"></div>
+        </div>
+        <div class="layer4">
+          <div class="page-left"></div>
+        </div>
+        <div class="pages-new p-left">
+          <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>America0</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+
+            <div class="page-back-side">
+            	 <div class="page-text w-richtext">
+              <h3><strong>America1</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+            </div>
+          </div>
+
+
+  <div class="each-page-new page-left-2 on-top-right" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>America2</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+
+            <div class="page-back-side">
+            	 <div class="page-text w-richtext">
+              <h3><strong>America3</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+            </div>
+          </div>
+
+
+          <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>America4</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+
+            <div class="page-back-side">
+            	 <div class="page-text w-richtext">
+              <h3><strong>America5</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>America6</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>America7</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Centre of equal daughters, equal sons,</p>
+              <p>All, all alike endear’d, grown, ungrown, young or old,</p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>Types of scams</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>2)&nbsp;&nbsp;&nbsp;&nbsp;-Hidden mint refers to a feature in crypto contracts where new tokens can be created without public disclosure. So you take hold of those new tokens, double the circulating supply and sell the half you just minted, take all the pooled Eth and be gone. You victoms holding now are worth 0<p></p>
+              <p>Here things </p>
+              <p>Strong, ample, fair, enduring, capable, rich,</p>
+              <p>Perennial with the Earth, with Freedom, Law and Love,</p>
+              <p>A grand, sane, towering, seated Mother,</p>
+              <p>Chair’d in the adamant of Time.</p>
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>Types of scams</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>On Ehtereum the basic scam tactics are:</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;-Hard scams: Here we have 2 main catigories delayed honey pots and hiddens mints </p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;1) A honeypot in crypto is a trap set to lure in unsuspecting victims, only to steal their funds with the use of malisious contracts that prevent holders to sell their tokens.</p>
+              <p>The most common way to achieve the above is to use an external smart contract for your sales tax, where you can pause incoming Ethereum. As a result, a sale becomes impossible since the contract is unable to collect tax, so it reverts all transactions.</p>
+              <p>This way, your contract will look clean to all contract analyzing bots since the honeypot function is hidden to an external contract.</p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>Socials</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Up next is twitter, whip up some images or videos showcasing your project and start pumping them out regularly. Keep the words to a minimum; nobody's got time for essays on Twitter. Stick to the basics: talk about goals you've smashed, achievements unlocked, that kind of thing. And don't forget those hashtags.</p>
+              <p><br>How to communicate as the owner:</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;You are the big cheese behind the project, keep your communication straight to the point.  always act like you know everything, even if you're just winging it. Anyone who says otherwise? They're just playing catch-up. Remember, less talk, more action. You're not here to hype things up; you're here to make moves, or at least pretend you do.</p>
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>Socials</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p> Social realm, starting with Telegram.<br> Download the desktop version and snag accounts for next to nothing from online platforms (be sure to always pay with crypto). When setting up those accounts, make sure to deactivate calls, last seen online, and hide your phone number (because let's face it, it's probably from Nigeria or someplace equally .....exotic), and don't forget to tick the box for account deletion if inactive.</p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;Now you need to create one channel to serve as your portal, and another group to be the hub of all the chatter. Use  Telegram bots like "SafeguardRobot" to create a portal and connect it to your group.</p>
+              <p>In your community group, deploy a bot like BuyBotTrending to showcase new token buys.</p>
+              <p></p>
+              <p></p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>Website</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p><br>As for hosting, anonymity is your friend. Use a VPN, pay with crypto, cover your tracks. You know the drill.</p>
+              <p><br>Lastly when it comes to web-building platform some popular choices are: Hostinger, Squarespace, Wix, Webflow, GoDaddy, WordPress etc. They vary in complexity, but most of them do not require you to get your hands dirty with code.</p>
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>Website</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>The previous section will determine the overall look and/or functionality or lack there for of your website.</p>
+              <p>&nbsp;&nbsp;&nbsp;-For meme launches, visuals are key. You need artwork that resonates with your narrative. And don't forget those responsive gimmicks; they add that extra layer of engagement. But remember, less is more when it comes to words. Keep it concise and to the point. Nobody likes a desperate plea for attention. Let the community hype your project.</p>
+              <p>&nbsp;&nbsp;&nbsp;-Now, for LARP projects, you might need to pretend there's an application in the works or tantalize with a "coming soon" message. It's all about selling the dream. Again, professionalism is key. Make it look slick, but don't overdo it with unnecessary details.</p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+               <h3><strong>Launch concept</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Let's talk narratives for your launch.</p>
+              <p><br>-LARP(Live Action Role Play): Saying you did something when you actually didn't. Talk big</p>
+              <p>about launching a decentralized app for renting GPUs or a new sniper bot. But in reality, just whip up a website or Telegram bot that makes people think it's the real deal. Smoke and mirrors.</p>
+              <p><br>-Meme: Find a catchy narrative,create a web,make it responsive AF, slap on some memes, and watch it spread . Keep it simple, no big words, and let the hype do the work.</p>
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>Tools of scam</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Here we will lay out the toolkit you will need to effortlessly strip a degen from their funds.</p><br>
+              <p>So before the con begins you will need:</p>
+              <p>&nbsp;&nbsp;&nbsp1) A website
+              <p>&nbsp;&nbsp;&nbsp;2) Telegram acount.</p>
+              <p>&nbsp;&nbsp;&nbsp;3) Twitter</p>
+              <p>&nbsp;&nbsp;&nbsp;4)Access to malicious yet clean smart scamtracts</p>
+              <p>Or if you are scamming on Solana</p>
+              <p>&nbsp;&nbsp;&nbsp;-Access to easy to use scam-scripts<p>
+              <p><br> All of the above will be explained thoroughly in upcoming sections<p>
+            </div>
+            </div>
+          </div>
+
+           <div class="each-page-new page-left-2" >
+         <!--    <div class="corner"></div>
+            <div class="corner2"></div> -->
+           <!--  <div class="corner-fold"></div> -->
+            <div class="page-text w-richtext">
+              <h3><strong>Introduction</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>This book is your ultimate roadmap to dive headfirst into the jeet world of scams on Ethereum or Solana.  </p>
+              <p>We're here to take you on a rollercoaster ride from brainstorming your first scam idea to cashing out those sweet, sweet gains. </p>
+              <p>Packed with years of street-smart crypto wisdom, we've crafted this guide with our passion for scams.</p>
+              <p>Consider us your mischievous mentors, here to pass on our tricks of the trade to a new generation of hustlers.</p>
+              <p>If you're itching to add your own twist or you've got burning questions, hit us up on Telegram.</p>
+              
+            </div>
+
+            <div class="page-back-side">
+               <div class="page-text w-richtext">
+              <h3><strong>By scammers for scammers</strong></h3>
+              <h6>BY <a href="https://www.poetryfoundation.org/poets/walt-whitman" target="_blank">WALT WHITMAN</a></h6>
+              <p>‍</p>
+              <p>Introduction............................................page 2</p>
+              <p>Tools of a scammer.................................page 3</p>
+              <p>Types of launches....................................page 4</p>
+	      <p>Socials...................................................page 5</p>
+              <p>Types of scams.......................................page 6</p>
+              <p>On the subject of Ethreum .......................page 7</p>
+              <p>Scam on solana..........................................page 8</p>
+              <p>Hide your profits.......................................page 9</p>
+              <p>How to withdraw.......................................page 10</p>
+              <p>Conclusion................................................page 11</p>
+              <p>Disclaimer................................................page 12</p>
+              <br><p>   <br><br><br>  <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;page 1 </p>
+            </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <!-- <div class="center"></div> -->
+      <div class="right-side">
+        <div class="book-cover-right"></div>
+        <div class="layer1">
+          <div class="page-right"></div>
+        </div>
+        <div class="layer2 right">
+          <div class="page-right"></div>
+        </div>
+        <div class="layer3 right">
+          <div class="page-right"></div>
+        </div>
+        <div class="layer4 right">
+          <div class="page-right"></div>
+        </div>
+  
+      </div>
+    </div>
+ 
+  </div>
+
+  <!-- Another Book -->
+
+  
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script>
+  <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+
+  <script type="text/javascript">
+// $('.each-page-new:first-child').addClass('left-on-top');
+   $('.each-page-new').each(function(index,page){
+    $(page).addClass('on-top-right');
+    $(page).addClass('next-page');
+   })
+   $('.each-page-new').on('click',function(){
+    let mythis = $(this);
+      if($(this).hasClass('left-on-top')){
+        
+        $(this).addClass('on-top-right');
+          $(mythis).addClass('next-page');
+       $(mythis).removeClass('left-on-top');
+       $(mythis).next().addClass('left-on-top');
+    
+        
+      }
+      else {
+        setTimeout(function(){
+          $(mythis).next().removeClass('left-on-top');
+           $(mythis).addClass('left-on-top');
+        },500)
+        
+        $(this).removeClass('on-top-right');
+       
+        $(this).removeClass('next-page');
+      }
+   })
+  
+
+  </script>
+</body>
+
+</html>
